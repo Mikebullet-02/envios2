@@ -1,0 +1,132 @@
+<template>
+  <Header></Header>
+  <div class="flex flex-col w-full px-3 lg:px-20">
+    <Envios></Envios>
+    <h1 class="text-4xl font-extrabold capitalize ml-5 sm:ml-24 py-14">COBERTURA DE ENVÍOS</h1>
+    <div class="mx-auto">
+      <div class="flex flex-wrap justify-center pt-0 pb-10 sm:space-x-40">
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+          <select
+            v-model="origen"
+            @change="(e) => cargar(e)"
+            class="block sm:w-96 py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="¿Dónde dejar tus paquetes?"
+          >
+            <option>¿Dónde dejar tus paquetes?</option>
+            <option
+              v-for="destinos in databaseStore.$state.documents"
+              :key="destinos.id"
+              :value="destinos"
+            >
+              {{ destinos.origen }}
+            </option>
+          </select>
+          <div class="mt-4">
+            <h2 class="text-2xl font-bold">Dirección</h2>
+            <h3 class="text-gray-500 text-lg">De:</h3>
+            <p v-if="origen != null" class="text-lg">{{ origen.ubicacion }}</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+          <select
+            v-model="destino"
+            class="block sm:w-96 py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="">¿Dónde recoger tus paquetes?</option>
+            <option
+              v-for="destinos in databaseStore.$state.destinos"
+              :key="destinos.id"
+              :value="destinos"
+            >
+              {{ destinos.nombre }}
+            </option>
+          </select>
+          <div class="mt-4">
+            <h2 class="text-2xl font-bold">Dirección</h2>
+            <h3 class="text-gray-500 text-lg">A:</h3>
+            <p v-if="destino != null" class="text-lg">
+              {{ destino.direccion }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4"
+    >
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Sobres</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-20">Hasta 25 hojas</h2>
+        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+          {{ formatterMXN.format(destino.precios.SOB) }}
+        </p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Paquetes</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 0 - 1 Kg.</h2>
+        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+          {{ formatterMXN.format(destino.precios.PAQ) }}
+        </p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 1 - 10 Kg.</h2>
+        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+          {{ formatterMXN.format(destino.precios.C1) }}
+        </p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 11 - 20 Kg.</h2>
+        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+          {{ formatterMXN.format(destino.precios.C2) }}
+        </p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg sm:col-span-2">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Maletas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 21 - 30 Kg.</h2>
+        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+          {{ formatterMXN.format(destino.precios.C3) }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl pl-0 pr-0"
+    >
+      <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
+    </div>
+
+    <Calculadora></Calculadora>
+    <Formulario></Formulario>
+  </div>
+  <Footer></Footer>
+  <router-view />
+</template>
+
+<script setup>
+import Header from "./components/Header.vue";
+import Envios from "./components/Envios.vue";
+import Calculadora from "./components/Calculadora.vue";
+import Footer from "./components/Footer.vue";
+import { onMounted, ref } from "@vue/runtime-core";
+import { userDatabaseStore } from "./stores/database.js";
+import Formulario from "./components/Formulario.vue";
+const databaseStore = userDatabaseStore();
+onMounted(async () => {
+  await databaseStore.getDocuments("envios");
+});
+const origen = ref(null);
+const destino = ref(null);
+// on origen change
+const cargar = async () => {
+  destino.value = null;
+  await databaseStore.getDocumentByKey("envios", "id", origen.value.id);
+};
+
+const formatterMXN = new Intl.NumberFormat("es-MX", {
+  style: "currency",
+  currency: "MXN",
+  minimumFractionDigits: 2,
+});
+</script>
