@@ -1,8 +1,10 @@
 <template>
   <Header></Header>
-  <div class="flex flex-col w-full px-3 lg:px-20">
+  <div class="flex flex-col w-full px-3 lg:px-52 md:px-0 sm:lg:px-0">
     <Envios></Envios>
-    <h1 class="text-4xl font-extrabold capitalize ml-5 sm:ml-24 py-14">COBERTURA DE ENVÍOS</h1>
+    <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 py-14">
+      COBERTURA DE ENVÍOS
+    </h1>
     <div class="mx-auto">
       <div class="flex flex-wrap justify-center pt-0 pb-10 sm:space-x-40">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
@@ -30,7 +32,7 @@
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
           <select
             v-model="destino"
-            class="block sm:w-96 py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block sm:w-96 w-72 py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option value="">¿Dónde recoger tus paquetes?</option>
             <option
@@ -54,38 +56,51 @@
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4"
     >
-      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Sobres</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-20">Hasta 25 hojas</h2>
-        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Sobres</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+          Hasta 25 hojas
+        </h2>
+        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.SOB) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Paquetes</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 0 - 1 Kg.</h2>
-        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Paquetes</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+          De 0 - 1 Kg.
+        </h2>
+        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.PAQ) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Cajas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 1 - 10 Kg.</h2>
-        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+          De 1 - 10 Kg.
+        </h2>
+        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C1) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Cajas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 11 - 20 Kg.</h2>
-        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+          De 11 - 20 Kg.
+        </h2>
+        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C2) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg sm:col-span-2">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5">Maletas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-20">De 21 - 30 Kg.</h2>
-        <p class="mt-4 text-4xl text-center sm:pt-20 sm:pb-5">
+      <div
+        v-if="destino != null"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:col-span-2"
+      >
+        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Maletas</h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+          De 21 - 30 Kg.
+        </h2>
+        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C3) }}
         </p>
       </div>

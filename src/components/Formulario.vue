@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <h1 class="text-4xl font-extrabold capitalize ml-5 sm:ml-24 pt-14 pb-5">
+    <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 pt-14 pb-5">
       TARIFAS PREFERENCIALES
     </h1>
     <h2 class="text-3xl font-extrabold capitalize sm:ml-32 ml-8">
@@ -136,15 +136,20 @@
                 class="opacity-25 fixed inset-0 z-40 bg-black"
               ></div>
             </form>
-            <div class="bg-white dark:bg-white sm:rounded-lg sm:pl-32">
+            <div
+              class="bg-white dark:bg-white sm:rounded-lg sm:pl-32 order-first sm:order-last"
+            >
               <div
                 class="flex items-center mt-8 text-gray-600 dark:text-gray-400"
               >
-                <img src="../assets/Persona.png" class="sm:w-auto sm:h-72 sm:pl-20 " />
+                <img
+                  src="../assets/Persona.png"
+                  class="sm:w-auto h-48 pl-28 sm:h-72 sm:pl-28"
+                />
               </div>
 
               <div
-                class="flex items-center mt-8 text-gray-600 dark:text-gray-400 "
+                class="flex items-center mt-8 text-gray-600 dark:text-gray-400 px-5"
               >
                 <svg
                   fill="none"
@@ -175,7 +180,7 @@
               </div>
 
               <div
-                class="flex items-center mt-4 text-gray-600 dark:text-gray-400"
+                class="flex items-center mt-4 text-gray-600 dark:text-gray-400 px-5"
               >
                 <svg
                   fill="none"
@@ -199,7 +204,7 @@
               </div>
 
               <div
-                class="flex items-center mt-2 text-gray-600 dark:text-gray-400"
+                class="flex items-center mt-2 text-gray-600 dark:text-gray-400 px-5"
               >
                 <svg
                   fill="none"

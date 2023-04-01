@@ -1,91 +1,81 @@
 <template>
   <div class="w-full">
-    <h1
-      class="text-4xl font-extrabold capitalize ml-5 sm:ml-24 py-14"
-    >
+    <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 py-14">
       CALCULA EL PESO DE TU PAQUETE
     </h1>
-    <div class="mx-auto my-5">
+    <div class="my-5 mb-0">
       <div class="flex flex-col justify-center items-center">
         <div class="flex flex-wrap xl:justify-center">
           <img src="../assets/Calculadora.png" class="h-auto max-w-sm" alt="" />
         </div>
-        <div class="bg-[#D9D9D9] mx-auto">
-          <h2 class="text-3xl md:ml-10 font-extrabold text-center mt-5">
+        <div class="bg-[#D9D9D9] max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl md:ml-10 font-semibold text-center mt-5">
             Calculadora de peso volumétrico
           </h2>
-          <div class="w-full  grid grid-cols-6 items-center pt-5">
-            <label
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl sm:lg font-bold"
-              for="inline-alto"
-              >Alto:</label
-            >
-            <input
-              class="col-span-4 border-2 border-gray-200 rounded w-full py-4 px-5 text-gray-700 focus:border-gray-800"
-              v-model="calculos.alto"
-              type="text"
-              name="inline-alto"
-              placeholder="Alto"
-            />
-            <span
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
-              >cm</span
-            >
-          </div>
           <div
-            class="container grid-container grid grid-cols-6 my-4 items-center"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-5"
           >
-            <label
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
-              for="inline-ancho"
-              >Ancho:</label
-            >
-            <input
-              class="col-span-4 border-2 border-gray-200 rounded w-full py-4 px-5 text-gray-700 focus:border-gray-800"
-              v-model="calculos.ancho"
-              type="text"
-              name="inline-ancho"
-              placeholder="Ancho"
-            />
-            <span
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
-              >cm</span
-            >
-          </div>
-
-          <div
-            class="container grid-container grid grid-cols-6 my-4 items-center"
-          >
-            <label
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
-              for="inline-largo"
-              >Largo:</label
-            >
-            <input
-              class="col-span-4 border-2 border-gray-200 rounded w-full py-4 px-5 text-gray-700 focus:border-gray-800"
-              v-model="calculos.largo"
-              type="text"
-              name="inline-largo"
-              placeholder="Largo"
-            />
-            <span
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
-              >cm</span
-            >
+            <div class="flex items-center flex-col sm:flex-row">
+              <label
+                class="block text-gray-700 text-xl font-bold mr-2"
+                for="inline-alto"
+                >Alto:</label
+              >
+              <input
+                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                v-model="calculos.alto"
+                type="text"
+                name="inline-alto"
+                placeholder="Alto"
+              />
+              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+            </div>
+            <div class="flex items-center flex-col sm:flex-row">
+              <label
+                class="block text-gray-700 text-xl font-bold mb-2"
+                for="inline-ancho"
+                >Ancho:</label
+              >
+              <input
+                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                v-model="calculos.ancho"
+                type="text"
+                name="inline-ancho"
+                placeholder="Ancho"
+              />
+              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+            </div>
+            <div class="flex items-center flex-col sm:flex-row">
+              <label
+                class="block text-gray-700 text-xl font-bold mb-2"
+                for="inline-largo"
+                >Largo:</label
+              >
+              <input
+                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                v-model="calculos.largo"
+                type="text"
+                name="inline-largo"
+                placeholder="Largo"
+              />
+              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+            </div>
           </div>
           <div class="my-4">
-            <div class="flex items-cener justify-center">
+            <div class="flex items-center justify-center">
               <span
-                class="col-span-1 mx-4 md:mx-10 text-black text-xl font-bold"
-                >Peso: {{ peso }} Kg</span
+                class="block text-black text-4xl font-semibold text-center sm:text-left"
               >
+                El peso total de tu paquete es:
+                <p class="text-center">{{ peso }} Kg</p>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="xl:h-auto xl:w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl xl:pl-0 xl:pr-0"
+      class="xl:h-auto xl:w-auto pt-5 pb-5 mt-0 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl xl:pl-0 xl:pr-0"
     >
       <p>UTILIZA LA FÓRMULA:</p>
       <p>(Alto(cm) * Ancho(cm) * Largo(cm))/6000</p>
