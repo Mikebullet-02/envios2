@@ -13,61 +13,68 @@
             Calculadora de peso volumétrico
           </h2>
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-5"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 pt-5 sm:mx-full"
           >
-            <div class="flex items-center flex-col sm:flex-row">
+            <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
                 class="block text-gray-700 text-xl font-bold mr-2"
                 for="inline-alto"
                 >Alto:</label
               >
               <input
-                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
                 v-model="calculos.alto"
                 type="text"
                 name="inline-alto"
                 placeholder="Alto"
               />
-              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+                >cm</span
+              >
             </div>
-            <div class="flex items-center flex-col sm:flex-row">
+            <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
-                class="block text-gray-700 text-xl font-bold mb-2"
+                class="block text-gray-700 text-xl font-bold mb-0 -mr-3"
                 for="inline-ancho"
                 >Ancho:</label
               >
               <input
-                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+              class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
                 v-model="calculos.ancho"
                 type="text"
                 name="inline-ancho"
                 placeholder="Ancho"
               />
-              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+                >cm</span
+              >
             </div>
-            <div class="flex items-center flex-col sm:flex-row">
+            <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
                 class="block text-gray-700 text-xl font-bold mb-2"
                 for="inline-largo"
                 >Largo:</label
               >
               <input
-                class="w-full py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
                 v-model="calculos.largo"
                 type="text"
                 name="inline-largo"
                 placeholder="Largo"
               />
-              <span class="text-gray-700 text-xl font-bold ml-2">cm</span>
+              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+                >cm</span
+              >
             </div>
           </div>
+
           <div class="my-4">
             <div class="flex items-center justify-center">
               <span
                 class="block text-black text-4xl font-semibold text-center sm:text-left"
               >
                 El peso total de tu paquete es:
-                <p class="text-center">{{ peso }} Kg</p>
+                <p class="text-center text-red-500">{{ peso }} Kg</p>
               </span>
             </div>
           </div>

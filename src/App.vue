@@ -23,13 +23,39 @@
               {{ destinos.origen }}
             </option>
           </select>
-          <div class="mt-4">
-            <h2 class="text-2xl font-bold">Dirección</h2>
-            <h3 class="text-gray-500 text-lg">De:</h3>
-            <p v-if="origen != null" class="text-lg">{{ origen.ubicacion }}</p>
+          <div class="mt-4 flex items-center">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              class="text-blue-900 mr-4 w-16 h-16 sm:w-30 sm:h-30"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <div>
+              <h2 class="text-4xl font-bold">Dirección</h2>
+              <h3 class="text-gray-500 text-2xl">De:</h3>
+              <p v-if="origen != null" class="text-3xl text-[#003386]">
+                {{ origen.ubicacion }}
+              </p>
+            </div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-0 md:mb-0">
           <select
             v-model="destino"
             class="block sm:w-96 w-72 py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -43,64 +69,98 @@
               {{ destinos.nombre }}
             </option>
           </select>
-          <div class="mt-4">
-            <h2 class="text-2xl font-bold">Dirección</h2>
-            <h3 class="text-gray-500 text-lg">A:</h3>
-            <p v-if="destino != null" class="text-lg">
+          <div class="mt-4 flex items-center">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              class="text-blue-900 mr-4 w-16 h-16 sm:w-30 sm:h-30"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <div>
+              <h2 class="text-4xl font-bold">Dirección</h2>
+            <h3 class="text-gray-500 text-2xl">A:</h3>
+            <p v-if="destino != null" class="text-3xl text-[#003368]">
               {{ destino.direccion }}
             </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2 sm:justify-items-center sm:place-items-center sm:px-80"
     >
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Sobres</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
+          Sobres
+        </h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-5 text-gray-300">
           Hasta 25 hojas
         </h2>
-        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
+        <p class="mt-4 text-4xl text-center sm:pt-0 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.SOB) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Paquetes</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
+          Paquetes
+        </h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-5 text-gray-300">
           De 0 - 1 Kg.
         </h2>
-        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
+        <p class="mt-4 text-4xl text-center sm:pt-0 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.PAQ) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Cajas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
+          Cajas
+        </h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-5 text-gray-300">
           De 1 - 10 Kg.
         </h2>
-        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
+        <p class="mt-4 text-4xl text-center sm:pt-0 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C1) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg">
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Cajas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
+          Cajas
+        </h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-5 text-gray-300">
           De 11 - 20 Kg.
         </h2>
-        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
+        <p class="mt-4 text-4xl text-center sm:pt-0 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C2) }}
         </p>
       </div>
       <div
         v-if="destino != null"
-        class="bg-gray-800 p-4 shadow rounded-lg sm:col-span-2"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-6/12 sm:col-span-2" 
       >
-        <h2 class="font-extrabold text-4xl text-center sm:pt-5 text-white">Maletas</h2>
-        <h2 class="font-extrabold text-3xl text-center sm:pt-10 text-gray-300">
+        <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
+          Maletas
+        </h2>
+        <h2 class="font-extrabold text-3xl text-center sm:pt-5 text-gray-300">
           De 21 - 30 Kg.
         </h2>
-        <p class="mt-4 text-4xl text-center sm:pt-5 sm:pb-0 text-gray-50">
+        <p class="mt-4 text-4xl text-center sm:pt-0 sm:pb-0 text-gray-50">
           {{ formatterMXN.format(destino.precios.C3) }}
         </p>
       </div>

@@ -1,28 +1,21 @@
 <template>
   <div class="w-screen sm:w-auto">
-    <header class="w-screen">
-      <div class="bg-[#FFFFFF] sm:pt-5">
+      <div class="bg-transparent sm:pt-5 sticky top-0">
         <nav
-          class="container px-6 py-8 mr-4 md:mr-20 mx-auto md:flex md:justify-between md:items-center"
+          class="px-6 py-8 mr-4 md:mr-32 mx-auto md:flex md:justify-between md:items-center"
         >
           <div class="flex items-center justify-between">
             <!-- Mobile menu button -->
             <div @click="toggleNav" class="flex md:hidden">
-              <button
-                type="button"
-                class="text-[#003368] hover:text-gray-900 focus:outline-none focus:text-gray-800"
-              >
+              <button type="button" class="text-[#003368] hover:text-gray-900 focus:outline-none focus:text-gray-800">
                 <svg viewBox="0 0 24 24" class="w-20 h-18 fill-current">
                   <path
                     fill-rule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  ></path>
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
                 </svg>
               </button>
             </div>
           </div>
-
-          <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
           <ul
             :class="showMenu ? 'flex' : 'hidden'"
             class="flex-col mt-10 mr-20 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 bg-white lg:bg-white md:bg-white sm:bg-[#003368]"
@@ -64,7 +57,7 @@
         class="bg-inherit py-5 px-6 sm:py-5 sm:px-16 lg:py-16 lg:px-48 text-start text-neutral-800"
       >
         <h1
-          class="mb-6 text-[#003368] text-4xl sm:text-5xl md:text-6xl font-bold blue:bg-neutral-700 sm:pl-[20px] md:pl-[30px] lg:pl-[-30px] xl:ml-[10px] tracking-widest"
+          class="mb-5 text-[#003368] text-4xl sm:text-6xl md:text-6xl font-bold blue:bg-neutral-700 sm:pl-[20px] md:pl-[30px] lg:pl-[-30px] xl:ml-[10px] tracking-widest"
         >
           AHORRA HASTA 60% EN  <p> LOGÍSTICA PARA TU</p> 
           <p>EMPRESA</p>
@@ -106,7 +99,7 @@
           <img src="../assets/personajeODM.png" />
         </div>
       </div>
-    </header>
+    
   </div>
 </template>
 
