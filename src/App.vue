@@ -1,6 +1,7 @@
 <template>
+  <Navbar></Navbar>
   <Header></Header>
-  <div class="flex flex-col w-full px-3 lg:px-52 md:px-0 sm:lg:px-0">
+  <div class="flex flex-col sm:w-full px-3 lg:px-52 md:px-0 sm:lg:px-0">
     <Envios></Envios>
     <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 py-14">
       COBERTURA DE ENVÍOS
@@ -181,12 +182,16 @@
 
 <script setup>
 import Header from "./components/Header.vue";
+import Navbar from "./components/Navbar.vue";
 import Envios from "./components/Envios.vue";
 import Calculadora from "./components/Calculadora.vue";
 import Footer from "./components/Footer.vue";
 import { onMounted, ref } from "@vue/runtime-core";
 import { userDatabaseStore } from "./stores/database.js";
 import Formulario from "./components/Formulario.vue";
+
+
+
 const databaseStore = userDatabaseStore();
 onMounted(async () => {
   await databaseStore.getDocuments("envios");

@@ -86,7 +86,7 @@
 
               <div class="pt-5 sm:pt-10 sm:flex sm:justify-center">
                 <button
-                  class="bg-[#003368] py-7 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-20 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150 sm:px-14"
+                  class="bg-[#003368] py-3 h-32 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-20 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150 sm:px-14"
                   type="submit"
                   v-on:click="toggleModal()"
                 >
@@ -222,9 +222,9 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                <a href="mailto:desarrollowebodm@gmail.com?subject=Nuevo Cliente Potencial" class="ml-4 text-md tracking-wide font-semibold w-40">
                   desarrollowebodm@gmail.com
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -284,4 +284,9 @@ const handleSubmit = () => {
   email.value = "";
   selectedOption.value = "";
 };
+
+
+
+
+
 </script>
