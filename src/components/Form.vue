@@ -17,7 +17,8 @@
   </template>
   
   <script>
-  import { sendMail } from '../../mailer.js';
+import { sendMail } from '../mailer.js';
+
   
   export default {
     data() {
@@ -29,7 +30,7 @@
         },
       };
     },
-    methods: {
+   
       async handleSubmit() {
         try {
           await sendMail(this.formData);
@@ -40,7 +41,7 @@
           alert('An error occurred. Please try again later.');
         }
       },
-    },
+    
   };
   </script>
   

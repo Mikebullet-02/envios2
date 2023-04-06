@@ -177,6 +177,7 @@
     <Formulario></Formulario>
   </div>
   <Footer></Footer>
+  
   <router-view />
 </template>
 

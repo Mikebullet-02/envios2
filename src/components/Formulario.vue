@@ -253,6 +253,7 @@ const empresa = ref("");
 const ciudad = ref("");
 const email = ref("");
 const selectedOption = ref("");
+
 const handleSubmit = () => {
   if (
     !url.value ||
@@ -284,9 +285,5 @@ const handleSubmit = () => {
   email.value = "";
   selectedOption.value = "";
 };
-
-
-
-
 
 </script>

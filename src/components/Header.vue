@@ -31,10 +31,10 @@
       </div>
 
       <div
-          class="mx-auto sm:max-w-auto sm:pt-[-100px] lg:pt-5 sm:ml-20 sm:py-20 sm:px-20"
+          class="mx-auto sm:w-auto sm:pt-[-100px] lg:pt-5 sm:ml-20 sm:py-20 sm:px-20"
         >
           <button
-            class="bg-[#003368] sm:w-auto h-24 sm:h-24º hover:bg-blue-600 text-white text-xl sm:text-4xl font-extrabold py-2 px-14 sm:py-2 sm:px-28"
+            class="bg-[#003368] h-24 sm:h-20 hover:bg-blue-600 text-white text-xl sm:text-4xl font-extrabold py-2 px-14 sm:py-2 sm:px-18"
           >
             TARIFAS PREFERENCIALES
           </button>

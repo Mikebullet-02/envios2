@@ -5,7 +5,7 @@
     >
       <div class="flex items-center justify-between">
         <!-- Mobile menu button -->
-        <div @click="toggleNav" class="flex md:hidden">
+        <div @click="toggleNav" class="flex md:hidden ml-auto">
           <button
             type="button"
             class="text-[#003368] hover:text-gray-900 focus:outline-none focus:text-gray-800"
@@ -19,17 +19,19 @@
           </button>
         </div>
       </div>
-      <img
+      <div>
+        <img
         src="../assets/ODMenvios.png"
         class="sm:hidden w-44 h-auto m-5"
         :class="showMenu ? 'flex' : 'hidden'"
       />
+      </div>
       <ul
         :class="showMenu ? 'flex' : 'hidden'"
         class="flex-col mt-0 mr-20 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 bg-[#003368] h-screen sm:h-auto lg:bg-transparent md:bg-white sm:bg-[#003368]"
       >
         <li
-          class="pl-1 border-b border-white hover:text-blue-600 font-extrabold text-2xl text-center text-white md:text-[#003368] xl:text-[#003368]"
+          class="border-b border-white hover:text-blue-600 font-extrabold text-2xl text-center text-white md:text-[#003368] xl:text-[#003368]"
         >
           <a href="#"
             >Tipos <br />
