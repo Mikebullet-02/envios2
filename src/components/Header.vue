@@ -12,7 +12,7 @@
       </h1>
       <div class="mx-auto max-w-[900px] sm:ml-5">
         <ul
-          class="flex flex-col space-y-2 py-5 sm:pt-5 pb-10 text-lg sm:text-3xl text-gray-800"
+          class="list-none flex flex-col space-y-2 py-5 sm:pt-5 pb-5 text-lg sm:text-3xl text-gray-800"
         >
           <li>Tarifas preferenciales para empresas</li>
           <li>
@@ -31,14 +31,14 @@
       </div>
 
       <div
-          class="mx-auto sm:w-auto sm:pt-[-100px] lg:pt-5 sm:ml-20 sm:py-20 sm:px-20"
+        class="mx-auto sm:w-auto sm:pt-[-100px] lg:pt-5 sm:ml-20 sm:py-20 sm:px-20"
+      >
+        <button
+          class="bg-[#003368] h-24 sm:h-20 hover:bg-blue-600 text-white text-xl sm:text-4xl font-extrabold py-2 px-14 sm:py-2 sm:px-18"
         >
-          <button
-            class="bg-[#003368] h-24 sm:h-20 hover:bg-blue-600 text-white text-xl sm:text-4xl font-extrabold py-2 px-14 sm:py-2 sm:px-18"
-          >
-            TARIFAS PREFERENCIALES
-          </button>
-        </div>
+          TARIFAS PREFERENCIALES
+        </button>
+      </div>
       <div
         class="flex flex-auto mx-auto w-auto sm:w-80 h-auto mr-44 lg:mt-[-675px] opacity-0 2xl:opacity-100 hidden 2xl:block"
       >
@@ -47,5 +47,3 @@
     </div>
   </div>
 </template>
-
-

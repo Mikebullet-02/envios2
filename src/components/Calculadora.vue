@@ -17,52 +17,55 @@
           >
             <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
-                class="block text-gray-700 text-xl font-bold mr-2"
+                class="block text-gray-700 text-base font-bold mr-2 sm:text-2xl"
                 for="inline-alto"
                 >Alto:</label
               >
               <input
-                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none text-base sm:text-lg"
                 v-model="calculos.alto"
                 type="text"
                 name="inline-alto"
                 placeholder="Alto"
               />
-              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+              <span
+                class="flex-none text-gray-700 text-base font-bold ml-2 sm:text-2xl"
                 >cm</span
               >
             </div>
             <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
-                class="block text-gray-700 text-xl font-bold mb-0 -mr-3"
+                class="block text-gray-700 text-base font-bold mb-0 -mr-3 sm:text-2xl"
                 for="inline-ancho"
                 >Ancho:</label
               >
               <input
-              class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none text-base sm:text-lg"
                 v-model="calculos.ancho"
                 type="text"
                 name="inline-ancho"
                 placeholder="Ancho"
               />
-              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+              <span
+                class="flex-none text-gray-700 text-base font-bold ml-2 sm:text-2xl"
                 >cm</span
               >
             </div>
             <div class="flex items-center flex-row sm:flex-row sm:space-x-24">
               <label
-                class="block text-gray-700 text-xl font-bold mb-2"
+                class="block text-gray-700 text-base font-bold mb-2 sm:text-2xl"
                 for="inline-largo"
                 >Largo:</label
               >
               <input
-                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="flex-1 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none text-base sm:text-lg"
                 v-model="calculos.largo"
                 type="text"
                 name="inline-largo"
                 placeholder="Largo"
               />
-              <span class="flex-none text-gray-700 text-xl font-bold ml-2"
+              <span
+                class="flex-none text-gray-700 text-base font-bold ml-2 sm:text-2xl"
                 >cm</span
               >
             </div>

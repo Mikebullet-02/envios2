@@ -1,7 +1,9 @@
 <template>
   <Navbar></Navbar>
   <Header></Header>
-  <div class="flex flex-col sm:w-full px-3 lg:px-52 md:px-0 sm:lg:px-0">
+  <div
+    class="flex flex-col w-full sm:w-full px-3 lg:px-52 md:px-0 sm:lg:px-0 px-0 my-auto"
+  >
     <Envios></Envios>
     <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 py-14">
       COBERTURA DE ENVÍOS
@@ -95,10 +97,10 @@
             </svg>
             <div>
               <h2 class="text-4xl font-bold">Dirección</h2>
-            <h3 class="text-gray-500 text-2xl">A:</h3>
-            <p v-if="destino != null" class="text-3xl text-[#003368]">
-              {{ destino.direccion }}
-            </p>
+              <h3 class="text-gray-500 text-2xl">A:</h3>
+              <p v-if="destino != null" class="text-3xl text-[#003368]">
+                {{ destino.direccion }}
+              </p>
             </div>
           </div>
         </div>
@@ -107,7 +109,10 @@
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2 sm:justify-items-center sm:place-items-center sm:px-80"
     >
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+      <div
+        v-if="destino != null"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-full"
+      >
         <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
           Sobres
         </h2>
@@ -118,7 +123,10 @@
           {{ formatterMXN.format(destino.precios.SOB) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+      <div
+        v-if="destino != null"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-full"
+      >
         <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
           Paquetes
         </h2>
@@ -129,7 +137,10 @@
           {{ formatterMXN.format(destino.precios.PAQ) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+      <div
+        v-if="destino != null"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-full"
+      >
         <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
           Cajas
         </h2>
@@ -140,7 +151,10 @@
           {{ formatterMXN.format(destino.precios.C1) }}
         </p>
       </div>
-      <div v-if="destino != null" class="bg-gray-800 p-4 shadow rounded-lg sm:w-full">
+      <div
+        v-if="destino != null"
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-full"
+      >
         <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
           Cajas
         </h2>
@@ -153,7 +167,7 @@
       </div>
       <div
         v-if="destino != null"
-        class="bg-gray-800 p-4 shadow rounded-lg sm:w-6/12 sm:col-span-2" 
+        class="bg-gray-800 p-4 shadow rounded-lg sm:w-6/12 sm:col-span-2"
       >
         <h2 class="font-extrabold text-4xl text-center sm:pt-2 text-white">
           Maletas
@@ -177,8 +191,6 @@
     <Formulario></Formulario>
   </div>
   <Footer></Footer>
-  
-  <router-view />
 </template>
 
 <script setup>
@@ -190,8 +202,6 @@ import Footer from "./components/Footer.vue";
 import { onMounted, ref } from "@vue/runtime-core";
 import { userDatabaseStore } from "./stores/database.js";
 import Formulario from "./components/Formulario.vue";
-
-
 
 const databaseStore = userDatabaseStore();
 onMounted(async () => {

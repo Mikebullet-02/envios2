@@ -133,7 +133,7 @@
               </div>
               <div
                 v-if="showModal"
-                class="opacity-25 fixed inset-0 z-40 bg-black"
+                class="opacity-30 fixed inset-0 z-40 bg-black"
               ></div>
             </form>
             <div
@@ -222,7 +222,10 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <a href="mailto:desarrollowebodm@gmail.com?subject=Nuevo Cliente Potencial" class="ml-4 text-md tracking-wide font-semibold w-40">
+                <a
+                  href="mailto:desarrollowebodm@gmail.com?subject=Nuevo Cliente Potencial"
+                  class="ml-4 text-md tracking-wide font-semibold w-40"
+                >
                   desarrollowebodm@gmail.com
                 </a>
               </div>
@@ -285,5 +288,4 @@ const handleSubmit = () => {
   email.value = "";
   selectedOption.value = "";
 };
-
 </script>

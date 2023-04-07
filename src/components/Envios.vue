@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-300 w-full md:w-full mt-auto mb-0 h-auto">
-    <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 py-14">
+    <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 pt-10 pb-5">
       TIPOS DE ENVÍOS
     </h1>
     <div class="flex flex-wrap justify-center items-center gap-0 sm:gap-5">
@@ -20,7 +20,7 @@
           </p>
         </div>
         <img
-          class="sm:w-40 sm:h-28 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-16 sm:mb-5"
+          class="mr-5 sm:w-40 sm:h-28 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-16 sm:mb-5"
           src="../assets/SobreODM.png"
           alt="Image Description"
         />
@@ -41,7 +41,7 @@
           </p>
         </div>
         <img
-          class="sm:w-36 sm:h-36 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-7 sm:mb-0"
+          class="mr-5 sm:w-36 sm:h-36 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-7 sm:mb-0"
           src="../assets/cajaODM.png"
           alt="Image Description"
         />
@@ -51,12 +51,12 @@
       >
         <div class="p-5">
           <h3
-            class="text-2xl sm:text-3xl font-extrabold text-left sm:text-center text-gray-800 dark:text-white pt-0 sm:pt-7 sm:pb-5"
+            class="text-xl sm:text-3xl font-extrabold text-left sm:text-center text-gray-800 dark:text-white pt-0 sm:pt-7 sm:pb-5"
           >
             Paquetes
           </h3>
           <span
-            class="text-2xl sm:mt-0 sm:mb-0 text-gray-800 text-left sm:text-center dark:text-gray-400"
+            class="text-xl sm:mt-0 sm:mb-0 text-gray-800 text-left sm:text-center dark:text-gray-400"
           >
             <p>De 1-10 kg</p>
             <p>De 11-20 kg</p>
@@ -64,7 +64,7 @@
           </span>
         </div>
         <img
-          class="sm:w-40 sm:h-40 w-32 h-32 mt-[-130px] sm:mx-auto ml-48 sm:mt-[-5px] sm:mb-0"
+          class="mr-5 sm:w-40 sm:h-40 w-32 h-32 mt-[-130px] sm:mx-auto ml-48 sm:mt-[-5px] sm:mb-0"
           src="../assets/cajaODM.png"
           alt="Image Description"
         />
@@ -87,7 +87,7 @@
           </span>
         </div>
         <img
-          class="sm:w-24 sm:h-36 w-32 h-40 mt-[-150px] sm:mx-auto ml-48 sm:mt-0 sm:mb-0"
+          class="mr-5 sm:w-24 sm:h-36 w-32 h-40 mt-[-150px] sm:mx-auto ml-48 sm:mt-0 sm:mb-0"
           src="../assets/maleta.png"
           alt="Image Description"
         />
