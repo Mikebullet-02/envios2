@@ -1,10 +1,10 @@
 <template>
-  <div class="w-screen sm:w-auto">
+  <div class="w-screen sm:w-auto sm:pt-5">
     <div
       class="bg-inherit py-5 px-6 sm:py-5 sm:px-16 lg:py-16 lg:px-48 text-start text-neutral-800"
     >
       <h1
-        class="sm:mb-5 text-[#003368] text-4xl sm:text-6xl md:text-6xl font-bold blue:bg-neutral-700 sm:pl-[30px] md:pl-[30px] lg:pl-[-30px] xl:ml-[10px] tracking-widest"
+        class="sm:mb-5 text-[#003368] text-4xl sm:text-6xl md:text-6xl font-bold blue:bg-neutral-700 sm:pl-[30px] md:pl-[30px] lg:pl-[-30px] xl:ml-[10px] tracking-widest ease-in duration-500"
       >
         AHORRA HASTA 60% EN
         <p>LOGÍSTICA PARA TU</p>
@@ -36,13 +36,17 @@
         <button
           class="bg-[#003368] h-24 sm:h-20 hover:bg-blue-600 text-white text-xl sm:text-4xl font-extrabold py-2 px-14 sm:py-2 sm:px-18"
         >
-          TARIFAS PREFERENCIALES
+          <a href="#tarifas">TARIFAS PREFERENCIALES</a>
         </button>
       </div>
       <div
         class="flex flex-auto mx-auto w-auto sm:w-80 h-auto mr-44 lg:mt-[-675px] opacity-0 2xl:opacity-100 hidden 2xl:block"
       >
-        <img src="../assets/personajeODM.png" />
+        <img
+          src="../assets/personajeODM.webp"
+          onerror="this.src='../assets/personajeODM.png'"
+          alt="Personaje"
+        />
       </div>
     </div>
   </div>

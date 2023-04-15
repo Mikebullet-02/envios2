@@ -3,7 +3,9 @@
     <h1 class="text-4xl font-black capitalize ml-5 sm:ml-24 pt-10 pb-5">
       TIPOS DE ENVÍOS
     </h1>
-    <div class="flex flex-wrap justify-center items-center gap-0 sm:gap-5">
+    <div
+      class="flex flex-wrap justify-center items-center gap-0 sm:gap-5 md:gap-4"
+    >
       <div
         class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 sm:my-0 sm:w-72 md:w-72 lg:w-72 xl:w-72 sm:h-96"
       >
@@ -22,7 +24,7 @@
         <img
           class="mr-5 sm:w-40 sm:h-28 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-16 sm:mb-5"
           src="../assets/SobreODM.png"
-          alt="Image Description"
+          alt="Sobre"
         />
       </div>
       <div
@@ -42,8 +44,8 @@
         </div>
         <img
           class="mr-5 sm:w-36 sm:h-36 w-32 h-24 mt-[-100px] sm:mx-auto ml-48 sm:mt-7 sm:mb-0"
-          src="../assets/cajaODM.png"
-          alt="Image Description"
+          src="../assets/CajaODM.png"
+          alt="Paquete"
         />
       </div>
       <div
@@ -51,12 +53,12 @@
       >
         <div class="p-5">
           <h3
-            class="text-xl sm:text-3xl font-extrabold text-left sm:text-center text-gray-800 dark:text-white pt-0 sm:pt-7 sm:pb-5"
+            class="text-2xl sm:text-3xl font-extrabold text-left sm:text-center text-gray-800 dark:text-white pt-0 sm:pt-7 sm:pb-5"
           >
             Paquetes
           </h3>
           <span
-            class="text-xl sm:mt-0 sm:mb-0 text-gray-800 text-left sm:text-center dark:text-gray-400"
+            class="mt-1 text-2xl sm:mt-16 sm:mb-0 text-gray-800 text-left sm:text-center dark:text-gray-400"
           >
             <p>De 1-10 kg</p>
             <p>De 11-20 kg</p>
@@ -64,9 +66,9 @@
           </span>
         </div>
         <img
-          class="mr-5 sm:w-40 sm:h-40 w-32 h-32 mt-[-130px] sm:mx-auto ml-48 sm:mt-[-5px] sm:mb-0"
-          src="../assets/cajaODM.png"
-          alt="Image Description"
+          class="mr-5 sm:w-40 sm:h-40 w-32 h-36 mt-[-150px] sm:mx-auto ml-48 sm:mt-[-5px] sm:mb-0"
+          src="../assets/CajaODM.png"
+          alt="Paquetes"
         />
       </div>
       <div
@@ -87,9 +89,9 @@
           </span>
         </div>
         <img
-          class="mr-5 sm:w-24 sm:h-36 w-32 h-40 mt-[-150px] sm:mx-auto ml-48 sm:mt-0 sm:mb-0"
+          class="mr-5 sm:w-24 sm:h-36 w-32 h-36 mt-[-150px] sm:mx-auto ml-48 sm:mt-0 sm:mb-0"
           src="../assets/maleta.png"
-          alt="Image Description"
+          alt="Maletas"
         />
       </div>
     </div>

@@ -61,11 +61,11 @@
                   v-model="email"
                 />
               </div>
-              <div class="flex flex-col mt-5">
+              <div class="flex flex-col mt-5 space-y-5 ml-5">
                 <label class="inline-flex items-center">
                   <input
                     type="radio"
-                    class="form-radio"
+                    class="form-radio w-7 h-7 sm:w-6 sm:h-6"
                     v-model="selectedOption"
                     value="20 a 50 envíos mensuales"
                     name="option"
@@ -75,7 +75,7 @@
                 <label class="inline-flex items-center">
                   <input
                     type="radio"
-                    class="form-radio"
+                    class="form-radio w-7 h-7 sm:w-6 sm:h-6"
                     v-model="selectedOption"
                     value="más de 50 envíos mensuales"
                     name="option"
@@ -86,7 +86,7 @@
 
               <div class="pt-5 sm:pt-10 sm:flex sm:justify-center">
                 <button
-                  class="bg-[#003368] py-3 h-32 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-20 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150 sm:px-14"
+                  class="bg-[#003368] py-3 h-32 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-20 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-22 sm:mr-1 mb-1 ease-linear transition-all duration-150 sm:px-14"
                   type="submit"
                   v-on:click="toggleModal()"
                 >
@@ -131,13 +131,9 @@
                   </div>
                 </div>
               </div>
-              <div
-                v-if="showModal"
-                class="opacity-30 fixed inset-0 z-40 bg-black"
-              ></div>
             </form>
             <div
-              class="bg-white dark:bg-white sm:rounded-lg sm:pl-32 order-first sm:order-last"
+              class="bg-white sm:rounded-lg ml-2 sm:ml-32 order-first sm:order-last"
             >
               <div
                 class="flex items-center mt-8 text-gray-600 dark:text-gray-400"
@@ -145,6 +141,7 @@
                 <img
                   src="../assets/Persona.png"
                   class="sm:w-auto h-48 pl-28 sm:h-72 sm:pl-28"
+                  alt="Persona"
                 />
               </div>
 
@@ -237,14 +234,21 @@
   </div>
 </template>
 <script setup>
-import { collection } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
 import { ref } from "vue";
 import { userDatabaseStore } from "../stores/database.js";
 const databaseStore = userDatabaseStore();
 const showModal = ref(false);
 const toggleModal = () => {
-  showModal.value = !showModal.value;
+  if (
+    this.url &&
+    this.telefono &&
+    this.empresa &&
+    this.ciudad &&
+    this.email &&
+    this.selectedOption
+  ) {
+    this.showModal = !this.showModal;
+  }
 };
 const closeModal = () => {
   showModal.value = false;
@@ -268,10 +272,6 @@ const handleSubmit = () => {
     alert("Por favor llena todos los campos");
     return;
   }
-  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
-    alert("Por favor ingresa un correo válido");
-    return;
-  }
   databaseStore.addUrl(
     url.value,
     telefono.value,
@@ -280,6 +280,31 @@ const handleSubmit = () => {
     email.value,
     selectedOption.value
   );
+
+  fetch("http://localhost:5000/sendEmail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      url: url.value,
+      telefono: telefono.value,
+      empresa: empresa.value,
+      ciudad: ciudad.value,
+      email: email.value,
+      selectedOption: selectedOption.value,
+    }),
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      console.log(result);
+      alert(result);
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("An error occurred while sending the email.");
+    });
+
   console.log("FORMULARIO");
   url.value = "";
   telefono.value = "";
